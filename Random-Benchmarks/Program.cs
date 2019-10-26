@@ -5,6 +5,7 @@ namespace Random_Benchmarks {
 		public static void Main() {
 			BenchmarkRunner.Run<DynamicDispatchOverhead>();
 			BenchmarkRunner.Run<DispatchApproaches>();
+			BenchmarkRunner.Run<VectorMath>();
 		}
 	}
 }
