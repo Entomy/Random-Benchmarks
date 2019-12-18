@@ -19,8 +19,9 @@ namespace Random_Benchmarks {
 				new KeyChoice(ConsoleKey.D1, nameof(DynamicDispatchOverhead), () => BenchmarkRunner.Run<DynamicDispatchOverhead>()),
 				new KeyChoice(ConsoleKey.D2, nameof(DispatchApproaches), () => BenchmarkRunner.Run<DispatchApproaches>()),
 				new KeyChoice(ConsoleKey.D3, nameof(HasFlagApproaches), () => BenchmarkRunner.Run<HasFlagApproaches>()),
-				new KeyChoice(ConsoleKey.D4, nameof(NullArgChecking), () => BenchmarkRunner.Run<NullArgChecking>()),
-				new KeyChoice(ConsoleKey.D5, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
+				new KeyChoice(ConsoleKey.D4, nameof(MemberAccess), () => BenchmarkRunner.Run<MemberAccess>()),
+				new KeyChoice(ConsoleKey.D5, nameof(NullArgChecking), () => BenchmarkRunner.Run<NullArgChecking>()),
+				new KeyChoice(ConsoleKey.D6, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 	}
 }
