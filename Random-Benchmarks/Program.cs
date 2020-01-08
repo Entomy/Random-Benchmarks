@@ -22,6 +22,7 @@ namespace Random_Benchmarks {
 				new KeyChoice(ConsoleKey.D4, nameof(MemberAccess), () => BenchmarkRunner.Run<MemberAccess>()),
 				new KeyChoice(ConsoleKey.D5, nameof(NullArgChecking), () => BenchmarkRunner.Run<NullArgChecking>()),
 				new KeyChoice(ConsoleKey.D6, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
+				new KeyChoice(ConsoleKey.D7, nameof(WithinRange), () => BenchmarkRunner.Run<WithinRange>()),
 				new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 	}
 }
