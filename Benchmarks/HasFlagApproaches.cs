@@ -17,11 +17,14 @@ namespace RandomBenchmarks {
 		[SuppressMessage("Performance", "RCS1096:Use bitwise operation instead of calling 'HasFlag'.", Justification = "We're benchmarking code.")]
 		public Boolean HasFlag() => Options.HasFlag(RegexOptions.RightToLeft);
 
+		[Benchmark]
+		public Boolean MicrosoftBitwise() => (Options & RegexOptions.RightToLeft) == RegexOptions.RightToLeft;
+
 		/// <summary>
 		/// Roslynator alleges this is faster. They are correct. No idea what Microsoft is doing.
 		/// </summary>
 		/// <see cref="https://github.com/JosefPihrt/Roslynator/blob/master/docs/analyzers/RCS1096.md"/>
 		[Benchmark]
-		public Boolean Bitwise() => (Options & RegexOptions.RightToLeft) != 0;
+		public Boolean RoslynatorBitwise() => (Options & RegexOptions.RightToLeft) != 0;
 	}
 }

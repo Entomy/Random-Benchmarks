@@ -10,6 +10,9 @@ namespace Tests {
 		public void HasFlag() => Assert.True(instance.HasFlag());
 
 		[Fact]
-		public void Bitwise() => Assert.True(instance.Bitwise());
+		public void MicrosoftBitwise() => Assert.True(instance.MicrosoftBitwise());
+
+		[Fact]
+		public void RoslynatorBitwise() => Assert.True(instance.RoslynatorBitwise());
 	}
 }
