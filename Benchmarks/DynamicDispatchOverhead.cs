@@ -2,10 +2,11 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 
-namespace Random_Benchmarks {
+namespace RandomBenchmarks {
 	[SimpleJob(RuntimeMoniker.Net48)]
-	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
-	[SimpleJob(RuntimeMoniker.CoreRt30)]
+	[SimpleJob(RuntimeMoniker.NetCoreApp31)]
+	[SimpleJob(RuntimeMoniker.CoreRt31)]
+	[SimpleJob(RuntimeMoniker.Mono)]
 	public class DynamicDispatchOverhead {
 
 		[Benchmark]

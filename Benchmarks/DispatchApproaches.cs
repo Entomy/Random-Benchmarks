@@ -2,22 +2,23 @@
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 
-namespace Random_Benchmarks {
+namespace RandomBenchmarks {
 	[SimpleJob(RuntimeMoniker.Net48)]
-	[SimpleJob(RuntimeMoniker.NetCoreApp30)]
-	[SimpleJob(RuntimeMoniker.CoreRt30)]
+	[SimpleJob(RuntimeMoniker.NetCoreApp31)]
+	[SimpleJob(RuntimeMoniker.CoreRt31)]
+	[SimpleJob(RuntimeMoniker.Mono)]
 	public class DispatchApproaches {
 
 		A Object = new C();
 
 		[Benchmark]
-		public void VirtualTableCall() => Object.Method();
+		public Int32 VirtualTableCall() => Object.Method();
 
 		[Benchmark]
-		public void PatternMatchCall() => PatternMatch(Object);
+		public Int32 PatternMatchCall() => PatternMatch(Object);
 
 		[Benchmark]
-		public void TagSwitchCall() => TagSwitch(Object);
+		public Int32 TagSwitchCall() => TagSwitch(Object);
 
 		private static Int32 PatternMatch(A a) {
 			switch (a) {
