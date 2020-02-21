@@ -23,9 +23,10 @@ namespace RandomBenchmarks {
 			new KeyChoice(ConsoleKey.D5, nameof(MemberAccess), () => BenchmarkRunner.Run<MemberAccess>()),
 			new KeyChoice(ConsoleKey.D6, nameof(NullableEqualityChecking), () => BenchmarkRunner.Run<NullableEqualityChecking>()),
 			new KeyChoice(ConsoleKey.D7, nameof(NullArgChecking), () => BenchmarkRunner.Run<NullArgChecking>()),
-			new KeyChoice(ConsoleKey.D8, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
-			new KeyChoice(ConsoleKey.D9, nameof(WithinSignedRange), () => BenchmarkRunner.Run<WithinSignedRange>()),
-			new KeyChoice(ConsoleKey.A, nameof(WithinUnsignedRange), () => BenchmarkRunner.Run<WithinUnsignedRange>()),
+			new KeyChoice(ConsoleKey.D8, nameof(UnicodeNormalization), () => BenchmarkRunner.Run<UnicodeNormalization>()),
+			new KeyChoice(ConsoleKey.D9, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
+			new KeyChoice(ConsoleKey.A, nameof(WithinSignedRange), () => BenchmarkRunner.Run<WithinSignedRange>()),
+			new KeyChoice(ConsoleKey.B, nameof(WithinUnsignedRange), () => BenchmarkRunner.Run<WithinUnsignedRange>()),
 			new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 	}
 }
