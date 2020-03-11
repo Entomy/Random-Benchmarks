@@ -8,7 +8,6 @@ namespace RandomBenchmarks {
 	[SimpleJob(RuntimeMoniker.CoreRt31)]
 	[SimpleJob(RuntimeMoniker.Mono)]
 	public class DynamicDispatchOverhead {
-
 		[Benchmark]
 		public void StaticCall() => Static.Method();
 
