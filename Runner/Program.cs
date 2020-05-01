@@ -25,10 +25,11 @@ namespace RandomBenchmarks {
 			new KeyChoice(ConsoleKey.D7, nameof(NullableEqualityChecking), () => BenchmarkRunner.Run<NullableEqualityChecking>()),
 			new KeyChoice(ConsoleKey.D8, nameof(NullableOverhead), () => BenchmarkRunner.Run<NullableOverhead>()),
 			new KeyChoice(ConsoleKey.D9, nameof(NullArgChecking), () => BenchmarkRunner.Run<NullArgChecking>()),
-			new KeyChoice(ConsoleKey.A, nameof(UnicodeNormalization), () => BenchmarkRunner.Run<UnicodeNormalization>()),
-			new KeyChoice(ConsoleKey.B, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
-			new KeyChoice(ConsoleKey.C, nameof(WithinSignedRange), () => BenchmarkRunner.Run<WithinSignedRange>()),
-			new KeyChoice(ConsoleKey.D, nameof(WithinUnsignedRange), () => BenchmarkRunner.Run<WithinUnsignedRange>()),
+			new KeyChoice(ConsoleKey.A, nameof(ReturnConstruction), () => BenchmarkRunner.Run<ReturnConstruction>()),
+			new KeyChoice(ConsoleKey.B, nameof(UnicodeNormalization), () => BenchmarkRunner.Run<UnicodeNormalization>()),
+			new KeyChoice(ConsoleKey.C, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
+			new KeyChoice(ConsoleKey.D, nameof(WithinSignedRange), () => BenchmarkRunner.Run<WithinSignedRange>()),
+			new KeyChoice(ConsoleKey.E, nameof(WithinUnsignedRange), () => BenchmarkRunner.Run<WithinUnsignedRange>()),
 			new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 	}
 }
