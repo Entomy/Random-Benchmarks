@@ -30,6 +30,7 @@ namespace RandomBenchmarks {
 			new KeyChoice(ConsoleKey.C, nameof(VectorMath), () => BenchmarkRunner.Run<VectorMath>()),
 			new KeyChoice(ConsoleKey.D, nameof(WithinSignedRange), () => BenchmarkRunner.Run<WithinSignedRange>()),
 			new KeyChoice(ConsoleKey.E, nameof(WithinUnsignedRange), () => BenchmarkRunner.Run<WithinUnsignedRange>()),
+			new KeyChoice(ConsoleKey.F, nameof(WrapperOverhead), () => BenchmarkRunner.Run<WrapperOverhead>()),
 			new BackKeyChoice(ConsoleKey.Q, "Quit", () => Environment.Exit(0)));
 	}
 }
