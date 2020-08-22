@@ -10,7 +10,6 @@ namespace RandomBenchmarks {
 	[SimpleJob(RuntimeMoniker.CoreRt31)]
 	[SimpleJob(RuntimeMoniker.Mono)]
 	public class HasFlagApproaches {
-
 		RegexOptions Options = RegexOptions.IgnoreCase | RegexOptions.RightToLeft | RegexOptions.Singleline;
 
 		[Benchmark(Baseline = true)]

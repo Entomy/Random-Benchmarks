@@ -8,17 +8,23 @@ namespace RandomBenchmarks {
 	[SimpleJob(RuntimeMoniker.CoreRt31)]
 	[SimpleJob(RuntimeMoniker.Mono)]
 	public class DispatchApproaches {
+		private static readonly A Object = new C();
 
-		A Object = new C();
+		private enum Tag { B, C }
 
 		[Benchmark]
-		public Int32 VirtualTableCall() => Object.Method();
+		public Int32 GenericCall() => Generic(Object);
 
 		[Benchmark]
 		public Int32 PatternMatchCall() => PatternMatch(Object);
 
 		[Benchmark]
 		public Int32 TagSwitchCall() => TagSwitch(Object);
+
+		[Benchmark]
+		public Int32 VirtualTableCall() => Object.Method();
+
+		private static Int32 Generic<T>(T obj) where T : A => obj.Method();
 
 		private static Int32 PatternMatch(A a) {
 			switch (a) {
@@ -30,6 +36,7 @@ namespace RandomBenchmarks {
 				throw new NotImplementedException();
 			}
 		}
+
 		private static Int32 TagSwitch(A a) {
 			switch (a.Tag) {
 			case Tag.B:
@@ -41,13 +48,10 @@ namespace RandomBenchmarks {
 			}
 		}
 
-
-		private enum Tag { B, C }
-
 		private abstract class A {
 			internal readonly Tag Tag;
 
-			internal A(Tag tag) => Tag = tag;
+			protected A(Tag tag) => Tag = tag;
 
 			/// <summary>
 			/// Dynamically dispatching call
