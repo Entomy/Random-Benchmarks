@@ -3,6 +3,8 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
 
 namespace RandomBenchmarks {
+	[SimpleJob(RuntimeMoniker.NetCoreApp50)]
+	[SimpleJob(RuntimeMoniker.CoreRt50)]
 	[SimpleJob(RuntimeMoniker.Net48)]
 	[SimpleJob(RuntimeMoniker.NetCoreApp31)]
 	[SimpleJob(RuntimeMoniker.CoreRt31)]
